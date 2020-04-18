@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {createContext} from 'react'
 
-const WeatherProvider = () => {
+const WeatherDataContext = createContext()
+
+const WeatherProvider = (props) => {
     return (
-        <div>
-            WeatherProvider
-        </div>
+        <WeatherDataContext.Provider value={[]}>
+            {props.children}
+        </WeatherDataContext.Provider>
     )
 }
 
